@@ -65,11 +65,7 @@ function path_dir($path, $dir_name = false)
 
 function path_trim($path)
 {
-	// this function does not follow symlinks
-	// replace it with return realpath($path) to respect symlinks
-	$hash = explode('#', $path);
-	$query = explode('?', $hash[0]);
-	$path = explode('/', $query[0]);
+	$path = explode('/', $path);
 
 	if (count($path) <= 1)
 	{
@@ -84,7 +80,6 @@ function path_trim($path)
 	}
 
 	$path = implode('/', $path);
-
 
 	return $path;
 }
